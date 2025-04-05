@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>UPI QR Payment</title>
+</head>
+<body>
+  <h2>Pay ₹%%AMOUNT%% to Soumyajit</h2>
+  <canvas id="qrcode"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script>
+    let upiUrl = "%%UPIURL%%";
+    QRCode.toCanvas(document.getElementById("qrcode"), upiUrl, {
+      width: 256,
+      margin: 2
+    }, function (error) {
+      if (error) console.error(error);
+      console.log("QR code generated!");
+    });
+  </script>
+</body>
+</html>
